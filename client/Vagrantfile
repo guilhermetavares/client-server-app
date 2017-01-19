@@ -4,8 +4,5 @@
 Vagrant.configure(2) do |config|
   config.vm.box = 'ubuntu/trusty64'
   config.vm.provision 'shell', path: 'install-python'
-  config.vm.provision :file, source: '../../crossover/', destination: '/tmp/crossover/'
-  config.vm.network "private_network", type: "dhcp"
-  config.vm.network "private_network", ip: "192.168.50.4"
-  config.vm.network "private_network", ip: "fde4:8dba:82e1::c4"
+  config.vm.provision :file, source: '../../client-server-app/', destination: '/tmp/crossover/'
 end

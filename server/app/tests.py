@@ -32,6 +32,7 @@ class ServerTestCase(unittest.TestCase):
         file_xml = open('encrypt_xml_response.txt')
         xml = file_xml.read()
         file_xml.close()
+        print(xml)
         return xml
 
     def test_01_main_page(self):

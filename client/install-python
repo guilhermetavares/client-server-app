@@ -20,5 +20,7 @@ else
   echo 'Clean up...'
   cd && rm -rf /tmp/Python-3.5.1
 
+  cd && sudo apt-get install python3-setuptools
+  cd && sudo easy_install3 pip
   echo 'Done!'
 fi

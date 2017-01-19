@@ -53,7 +53,7 @@ class Machine(db.Model):
         return '<IP %r>' % self.ip_address
 
     def get_data(self):
-        return MachineCPUData.query.filter_by(machine_id=self.id).first()
+        return self.cpu_data_set.all()[-1]
 
 
 def create_machine_from_xml(xml_data):
@@ -106,7 +106,7 @@ def add_machine():
 
 
 @app.route('/update/')
-def add_numbers():
+def add_data():
     from client import ServerClient
 
     machines = Machine.query.all()
