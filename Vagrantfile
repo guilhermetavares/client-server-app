@@ -4,5 +4,5 @@
 Vagrant.configure(2) do |config|
   config.vm.box = 'ubuntu/trusty64'
   config.vm.provision 'shell', path: 'install-python'
-  config.vm.provision :file, source: '../../client-server-app/', destination: '/tmp/crossover/'
+  config.vm.synced_folder "../client-server-app/", "/home/vagrant", create: true
 end
