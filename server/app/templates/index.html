@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>CPU Monitoring</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+</head>
+<body>
+
+<div class="container">
+  <h2>CPU List Aplications</h2>           
+  <table class="table">
+    <thead>
+      <tr>
+        <th>IP</th>
+        <th>CPU</th>
+        <th>Memory Total</th>
+        <th>Memory %</th>
+        <th>Uptime</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for machine in machine_list %}
+        <tr>
+          <td>{{ machine.ip_address }}</td>
+          {% set machine_data = machine.get_data() %}
+          <td>{{ machine_data.cpu_percent }}</td>
+          <td>{{ machine_data.memory_total }}</td>
+          <td>{{ machine_data.memory_percent }}</td>
+          <td>{{ machine_data.uptime }}</td>
+        </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+
+  <div class="form">
+    <form method="POST" action="/add/">
+        <textarea name="xml" placeholder='ENTER YOUR XML HERE...' style="width:600px;height:300px;"></textarea>
+        <button>SEND XML</button>
+    </form>
+  </div>
+
+</div>
+
+</body>
+</html>

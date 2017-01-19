@@ -45,6 +45,8 @@ coverage.xml
 *,cover
 .hypothesis/
 
+client/.vagrant/
+
 # Translations
 *.mo
 *.pot

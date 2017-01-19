@@ -1,0 +1,7 @@
+web:
+  build: .
+  command: bash -c 'python app/start.py && python -u app/app.py'
+  ports:
+    - "5000:5000"
+  volumes:
+    - .:/app

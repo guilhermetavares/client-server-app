@@ -1,0 +1,4 @@
+<client ip="127.0.0.1" port="2222" username="vagrant" password="vagrant" mail="zetavares.rib@gmail.com">    
+    <alert type="memory" limit="50%" />
+    <alert type="cpu" limit="20%" />
+</client>

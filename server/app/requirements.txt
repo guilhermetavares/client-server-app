@@ -1,0 +1,7 @@
+Flask==0.12
+Flask-SQLAlchemy==2.1
+httpretty>=0.8
+Flask-Testing>=0.4.1
+mock
+nose
+selenium
